@@ -14,20 +14,6 @@ struct line
     double b=0;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void get_line (line &i);
 void get_point (int &n);
 void read_points (point cord, point A[], int n);
