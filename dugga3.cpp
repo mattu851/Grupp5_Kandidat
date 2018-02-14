@@ -2,6 +2,9 @@
 #include <sten>
 #include <Gustav>
 
+#inculde <Alla, alla får vara med>
+
+
 #include <cmath>
 #include <iostream>
 using namespace std;
