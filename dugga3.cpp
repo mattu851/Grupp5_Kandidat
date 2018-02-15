@@ -2,6 +2,8 @@
 #include <sten>
 #include <Gustav>
 
+///////// test av commit
+
 #include <cmath>
 #include <iostream>
 using namespace std;
