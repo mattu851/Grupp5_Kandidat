@@ -23,10 +23,14 @@ public class AGVg5 {
     String Bn = "001A7DDA7106";
     String Cn = "1";
     
-    
+    //Rasberry
     Bn = "B827EB003082";
     Cn = "22";     
+   
     
+    // Grupp 4
+    //Bn ="001060D1C8E1";	
+    //Cn =1;
     
         bt = new BluetoothTransmitter(Bn, Cn);
         br = new BluetoothReceiver();

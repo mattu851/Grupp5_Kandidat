@@ -22,7 +22,8 @@ public class BluetoothReceiver implements Runnable {
     public void run() {
         try {
 
-            while (true) {
+             
+                
                 try {
                     StreamConnectionNotifier service = (StreamConnectionNotifier) Connector.open("btspp://localhost:" + new UUID(0x1101).toString() + ";name=TNK111-Grupp5_Receiver");
                     StreamConnection anslutning = (StreamConnection) service.acceptAndOpen();
@@ -31,15 +32,16 @@ public class BluetoothReceiver implements Runnable {
                     int antal_bytes = bluetooth_in.read(buffer);
                     String mottaget = new String(buffer, 0, antal_bytes);
                     System.out.println("\n" + "Mottaget meddelande: " + mottaget);
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                     anslutning.close();
                 } catch (IOException e) {
                     System.err.print(e.toString());
 
                 }
-            }
+            
         } catch (InterruptedException exception) {
 
         }
     }
+    
 }
