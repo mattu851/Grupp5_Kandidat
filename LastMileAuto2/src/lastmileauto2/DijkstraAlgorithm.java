@@ -118,12 +118,34 @@ public class DijkstraAlgorithm {
      * This method returns the path from the source to the selected target and
      * NULL if no path exists
      */
+    
     public LinkedList<Vertex> getPath(Vertex target) {
         LinkedList<Vertex> path = new LinkedList<Vertex>();
         Vertex step = target;
         // check if a path exists
+     
         if (predecessors.get(step) == null) {
             return null;
+        }
+        path.add(step);
+        while (predecessors.get(step) != null) {
+            step = predecessors.get(step);
+            path.add(step);
+           
+        }
+        // Put it into the correct order
+        Collections.reverse(path);
+        return path;
+    }
+    /////Min kod
+    /*
+    public int getIndex(Vertex target){
+        LinkedList<Vertex> path = new LinkedList<Vertex>();
+        Vertex step = target;
+        // check if a path exists
+     
+        if (predecessors.get(step) == null) {
+            return 0;
         }
         path.add(step);
         while (predecessors.get(step) != null) {
@@ -132,7 +154,10 @@ public class DijkstraAlgorithm {
         }
         // Put it into the correct order
         Collections.reverse(path);
-        return path;
+        
+        return 1;
+    }
+    */
     }
 
-}
+

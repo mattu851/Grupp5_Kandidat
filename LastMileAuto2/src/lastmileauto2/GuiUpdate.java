@@ -17,11 +17,14 @@ public class GuiUpdate implements Runnable {
     private static Random generator = new Random();
     private ControlUI cui;
     private DataStore ds;
+    private OptPlan op; 
 
-    public GuiUpdate(DataStore ds, ControlUI cui) {
+    public GuiUpdate(DataStore ds, ControlUI cui,OptPlan op) {
         this.cui = cui;
         this.ds = ds;
-        sleepTime = generator.nextInt(20000);
+        this.op = op;
+        //sleepTime = generator.nextInt(20000);
+        sleepTime = 1000;
     }
 
     @Override
@@ -29,22 +32,26 @@ public class GuiUpdate implements Runnable {
         try {
             cui.appendStatus("GuiUpdate startar och kommer att köra i "
                     + sleepTime + " millisekunder.");
-            int i = 1;
+            int i = 0;
 
+            /*
             while (ds.updateUIflag == false) {
                 
                 Thread.sleep(20);
-               
-            }
-            while (i <= 20) {
+            }*/
+            int[] list = op.getIndex();
+            while (i <= list.length) {
 
-                Thread.sleep(sleepTime / 20);
+                Thread.sleep(sleepTime);
                 cui.appendStatus("Jag är tråd GuiUpdate! För " + i + ":te gången.");
-                ds.robotX = ds.robotX -10;
-
+                
+                ds.robotX = (int) (ds.nodeX[list[i]]);
+                ds.robotY = (int) (ds.nodeY[list[i]]);
+                 System.out.println("Nod är:"+ list[i] );
+                System.out.println("RobotX:"+ ds.robotX);
+                System.out.println("RobotY:"+ds.robotY);
                 i++;
                 cui.repaint();
-
             }
             
         } catch (InterruptedException exception) {
