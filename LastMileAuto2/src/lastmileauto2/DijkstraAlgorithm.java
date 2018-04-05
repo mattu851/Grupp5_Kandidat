@@ -133,6 +133,7 @@ public class DijkstraAlgorithm {
             path.add(step);
            
         }
+        System.out.println(path);
         // Put it into the correct order
         Collections.reverse(path);
         return path;
