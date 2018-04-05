@@ -3,6 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* Magiska koden för SDP fel
+itn@TNK111-G5:~$ sudo -i
+[sudo] password for itn: 
+root@TNK111-G5:~# chmod 777 /var/run/sdp
+
+*/
 package agvg5;
 
 import java.io.*;
@@ -22,8 +28,6 @@ public class BluetoothReceiver implements Runnable {
     public void run() {
         try {
 
-             
-                
                 try {
                     StreamConnectionNotifier service = (StreamConnectionNotifier) Connector.open("btspp://localhost:" + new UUID(0x1101).toString() + ";name=TNK111-Grupp5_Receiver");
                     StreamConnection anslutning = (StreamConnection) service.acceptAndOpen();

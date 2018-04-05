@@ -28,7 +28,7 @@ public class BluetoothTransmitter implements Runnable {
 
     public BluetoothTransmitter(String BlueNr, String ChannelNr) {
 
-        tot = "btspp://" + BlueNr + ":" + ChannelNr + "";
+        tot = "btspp://" + BlueNr + ":" + ChannelNr + ""; // här stoppar vi in adressen
 
     }
 
@@ -48,7 +48,7 @@ public class BluetoothTransmitter implements Runnable {
                     StreamConnection anslutning = (StreamConnection) Connector.open(tot);
                     //StreamConnection anslutning = (StreamConnection) Connector.open("btspp://B827EB003082:22"); // här stoppar vi in adressen
                     PrintStream bluetooth_ut = new PrintStream(anslutning.openOutputStream());
-                    bluetooth_ut.append("JAG ÄR LABBDATOR66666666666666666666666666666666666666");
+                    bluetooth_ut.append("JAG AR LABBDATOR");
                    // bluetooth_ut.append("hej ");
                     Thread.sleep(1000);
                     anslutning.close();

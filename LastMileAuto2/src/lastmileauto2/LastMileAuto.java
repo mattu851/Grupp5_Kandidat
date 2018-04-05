@@ -19,7 +19,7 @@ public class LastMileAuto {
         /*
          * This sets the file path and read network text file. Adjust for your needs.
          */
-        ds.setFileName("/Users/Carllindgren/NetBeansProjects/streets.txt");
+        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         ds.readNet();
 
         /*

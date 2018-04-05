@@ -17,6 +17,8 @@ public class GuiUpdate implements Runnable {
     private static Random generator = new Random();
     private ControlUI cui;
     private DataStore ds;
+    
+    
 
     public GuiUpdate(DataStore ds, ControlUI cui) {
         this.cui = cui;
@@ -40,7 +42,8 @@ public class GuiUpdate implements Runnable {
 
                 Thread.sleep(sleepTime / 20);
                 cui.appendStatus("Jag är tråd GuiUpdate! För " + i + ":te gången.");
-                ds.robotX = ds.robotX -10;
+               // ds.robotX = ds.robotX -10;
+                ds.robotX =  (int) (ds.nodeX[ds.arcStart[i] - 1] );
 
                 i++;
                 cui.repaint();
