@@ -34,10 +34,7 @@ public class AGVg5 {
         bt = new BluetoothTransmitter(Bn, Cn);
         br = new BluetoothReceiver();
         ds = new DataStore1();
-       
 
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
-        ds.readNet();
         gui = new GUI(ds);
 
         gui.setVisible(true);
@@ -51,6 +48,8 @@ public class AGVg5 {
             i++;
         }
 
+        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        ds.readNet();
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         Thread t1 = new Thread(bt);
