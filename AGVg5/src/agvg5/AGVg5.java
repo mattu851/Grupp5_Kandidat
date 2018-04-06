@@ -38,7 +38,14 @@ public class AGVg5 {
 
         http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
        
+        
+         //Ubuntu-dator
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        // Gustavs dator
+        //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        // Calles dator
+        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+        
         ds.readNet();
 
         gui = new GUI(ds);
