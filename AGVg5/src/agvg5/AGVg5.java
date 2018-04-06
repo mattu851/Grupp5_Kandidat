@@ -12,6 +12,7 @@ public class AGVg5 {
     BluetoothReceiver br;
     DataStore1 ds;
     GUI gui;
+    HTTP_test http;
 
     /**
      * @param args the command line arguments
@@ -34,8 +35,8 @@ public class AGVg5 {
         bt = new BluetoothTransmitter(Bn, Cn);
         br = new BluetoothReceiver();
         ds = new DataStore1();
+        http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
        
-
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         ds.readNet();
         gui = new GUI(ds);
@@ -44,21 +45,25 @@ public class AGVg5 {
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
+
         //Test för att ändra uppdragslistan.
         int i = 0;
         while (i <= 40) {
             gui.setUppdrag("" + Cn + i);
             i++;
         }
-
+        
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         Thread t1 = new Thread(bt);
         Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
 
+        //Thread t4 = new Thread(http);
+
         t1.start();
         t2.start();
+        //t4.start();
     }
 
     public static void main(String[] args) {
