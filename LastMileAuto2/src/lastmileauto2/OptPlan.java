@@ -14,9 +14,10 @@ import java.util.*;
 public class OptPlan {
 
     private List<Vertex> nodes;
-
     private List<Edge> edges;
     private DataStore ds;
+    private int[] indexList = new int[1000];
+    
 
     public OptPlan(DataStore ds) {
         this.ds = ds;
@@ -24,11 +25,12 @@ public class OptPlan {
 
     public void createPlan() {
         nodes = new ArrayList<Vertex>();
-        edges = new ArrayList<Edge>();
+        edges = new ArrayList<Edge>(); 
         // Set up network
         for (int i = 0; i < ds.nodes; i++) {
             Vertex location = new Vertex("" + (i + 1), "Nod #" + (i + 1));
             nodes.add(location);
+            
         }
         for (int i = 0; i < ds.arcs; i++) {
             Edge lane = new Edge("" + (i + 1), nodes.get(ds.arcStart[i]
@@ -45,6 +47,7 @@ public class OptPlan {
         // Get shortest path
         for (int i = 0; i < path.size(); i++) {
             System.out.println(path.get(i));
+            indexList[i] = Integer.parseInt(path.get(i).getId()); 
         }
         // Arcs in the shortest path
         for (int i = 0; i < path.size() - 1; i++) {
@@ -55,9 +58,13 @@ public class OptPlan {
                     System.out.println("Arc: " + j);
                     ds.arcColor[j]=1;
                 }
+                
             }
         }
 
+    }
+    public int[] getIndex(){
+        return indexList;
     }
 
 }

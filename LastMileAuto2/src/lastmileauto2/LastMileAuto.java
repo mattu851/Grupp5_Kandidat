@@ -8,6 +8,7 @@ public class LastMileAuto {
 
     DataStore ds;
     ControlUI cui;
+    OptPlan op;
 
     LastMileAuto() {
 
@@ -19,7 +20,12 @@ public class LastMileAuto {
         /*
          * This sets the file path and read network text file. Adjust for your needs.
          */
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+
+        //Ubuntu-dator
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        // Gustavs dator
+        ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        
         ds.readNet();
 
         /*
@@ -28,18 +34,20 @@ public class LastMileAuto {
         cui = new ControlUI(ds);
         cui.setVisible(true);
         cui.showStatus();
+        
+        OptPlan op = new OptPlan(ds);
+        op.createPlan();
 
         RobotRead r1 = new RobotRead(ds, cui);
         Thread t1 = new Thread(r1);
 
-        GuiUpdate g1 = new GuiUpdate(ds, cui);
+        GuiUpdate g1 = new GuiUpdate(ds, cui, op);
         Thread t2 = new Thread(g1);
 
-        t1.start();
+        //t1.start();
         t2.start();
 
-        OptPlan op = new OptPlan(ds);
-        op.createPlan();
+        
 
     }
 
