@@ -41,13 +41,9 @@ public class LastMileAuto {
         OptPlan op = new OptPlan(ds);
         op.createPlan();
 
-        RobotRead r1 = new RobotRead(ds, cui);
-        Thread t1 = new Thread(r1);
-
         GuiUpdate g1 = new GuiUpdate(ds, cui, op);
         Thread t2 = new Thread(g1);
 
-        //t1.start();
         t2.start();
 
         
