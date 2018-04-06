@@ -35,7 +35,6 @@ public class DataStore {
         arcColor = new int[1000];
 
         networkRead = false;
-        updateUIflag = false;
 
     }
 
@@ -92,8 +91,8 @@ public class DataStore {
             }
 
             networkRead = true;  // Indicate that all network data is in place in the DataStore
-            robotX = nodeX[71];
-            robotY = nodeY[71];
+            robotX = nodeX[72];
+            robotY = nodeY[72];
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
