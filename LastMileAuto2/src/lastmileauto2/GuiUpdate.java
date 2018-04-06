@@ -46,14 +46,12 @@ public class GuiUpdate implements Runnable {
 
                 Thread.sleep(sleepTime);
                 cui.appendStatus("Jag är tråd GuiUpdate! För " + i + ":te gången.");
-
                 
                 ds.robotX = (int) (ds.nodeX[list[i]]);
                 ds.robotY = (int) (ds.nodeY[list[i]]);
                  System.out.println("Nod är:"+ list[i] );
                 System.out.println("RobotX:"+ ds.robotX);
                 System.out.println("RobotY:"+ds.robotY);
-
 
                 i++;
                 cui.repaint();

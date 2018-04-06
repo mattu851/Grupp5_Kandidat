@@ -21,8 +21,11 @@ public class LastMileAuto {
          * This sets the file path and read network text file. Adjust for your needs.
          */
 
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
-
+        //Ubuntu-dator
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        // Gustavs dator
+        ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        
         ds.readNet();
 
         /*
