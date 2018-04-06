@@ -32,7 +32,7 @@ public class MapPanel1 extends JPanel {
         final int xsize = 700;
        
 
-        if (ds.networkRead == true) { // Only try to plot is data has been properly read from file
+        if (ds.networkRead == false) { // Only try to plot is data has been properly read from file
 
             // Compute scale factor in order to keep the map in proportion when the window is resized
             System.out.println("TEST");

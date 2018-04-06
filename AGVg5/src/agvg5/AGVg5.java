@@ -51,6 +51,8 @@ public class AGVg5 {
         gui = new GUI(ds);
 
         gui.setVisible(true);
+        
+
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
@@ -63,8 +65,8 @@ public class AGVg5 {
         }
 
 
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
-        ds.readNet();
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        //ds.readNet();
 
 
         //cui=new ControlUI2(bt);
