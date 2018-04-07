@@ -40,11 +40,11 @@ public class AGVg5 {
        
         
          //Ubuntu-dator
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
         //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
         
         ds.readNet();
 
@@ -77,8 +77,8 @@ public class AGVg5 {
 
         //Thread t4 = new Thread(http);
 
-        t1.start();
-        t2.start();
+        //t1.start();
+        //t2.start();
         //t4.start();
     }
 

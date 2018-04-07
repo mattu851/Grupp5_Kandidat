@@ -21,7 +21,7 @@ public class MapPanel1 extends JPanel {
         final Color LIGHT_COLOR = new Color(150, 150, 150);
         final Color DARK_COLOR = new Color(0, 0, 0);
         final Color RED_COLOR = new Color(255, 0, 0);
-        final Color BLUE_COLOR =new Color(0,0,255);
+        final Color BLUE_COLOR = new Color(0, 0, 255);
         int x, y;
         int xR, yR;
         int x1, y1;
@@ -30,9 +30,10 @@ public class MapPanel1 extends JPanel {
         final int circlesize = 10;
         final int ysize = 350;
         final int xsize = 700;
-       
 
-        if (ds.networkRead == false) { // Only try to plot is data has been properly read from file
+        
+
+        if (ds.networkRead == true) { // Only try to plot is data has been properly read from file
 
             // Compute scale factor in order to keep the map in proportion when the window is resized
             System.out.println("TEST");
@@ -43,13 +44,11 @@ public class MapPanel1 extends JPanel {
 
             g.setColor(RED_COLOR);
 
-            
             xR = (int) (ds.robotX * xscale);
             yR = (int) (ds.robotY * yscale);
 
             g.drawOval(xR - ((circlesize + 10) / 2), height - yR - (circlesize + 10) / 2, circlesize + 10, circlesize + 10);
 
-            
             g.setColor(DARK_COLOR);
 
             // Draw nodes as circles
@@ -62,9 +61,9 @@ public class MapPanel1 extends JPanel {
 
             // Draw arcs
             for (int i = 0; i < ds.arcs; i++) {
-               g.setColor(BLUE_COLOR);
-               
-                if(ds.arcColor[i]==1){
+                g.setColor(BLUE_COLOR);
+
+                if (ds.arcColor[i] == 1) {
                     g.setColor(RED_COLOR);
                 }
                 x1 = (int) (ds.nodeX[ds.arcStart[i] - 1] * xscale);
@@ -72,7 +71,7 @@ public class MapPanel1 extends JPanel {
                 x2 = (int) (ds.nodeX[ds.arcEnd[i] - 1] * xscale);
                 y2 = (int) (ds.nodeY[ds.arcEnd[i] - 1] * yscale);
                 g.drawLine(x1, height - y1, x2, height - y2);
-                System.out.println("Arc "+i+": "+ds.arcStart[i]+" "+ds.arcEnd[i]);
+                System.out.println("Arc " + i + ": " + ds.arcStart[i] + " " + ds.arcEnd[i]);
             }
         }
     } // end paintComponent

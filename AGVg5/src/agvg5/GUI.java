@@ -64,7 +64,7 @@ public final class GUI extends javax.swing.JFrame {
         uppdragAGV3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        //jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,9 +217,9 @@ public final class GUI extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel1.setName(""); // NOI18N
+        //jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        //jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        //jPanel1.setName(""); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 350));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
