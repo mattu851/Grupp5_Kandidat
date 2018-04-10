@@ -6,7 +6,7 @@
 /* Magiska koden för SDP fel
 itn@TNK111-G5:~$ sudo -i
 [sudo] password for itn: 
-root@TNK111-G5:~# chmod 777 /var/run/sdp
+    root@TNK111-G5:~# chmod 777 /var/run/sdp
 
 */
 package agvg5;

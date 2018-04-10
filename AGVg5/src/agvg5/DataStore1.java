@@ -92,8 +92,8 @@ public class DataStore1 {
             }
 
             networkRead = true;  // Indicate that all network data is in place in the DataStore
-            robotX = nodeX[20];
-            robotY = nodeY[20];
+            robotX = nodeX[0];
+            robotY = nodeY[0];
             //System.out.println(""+networkRead );
 
         } catch (Exception e) {

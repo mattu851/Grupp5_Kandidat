@@ -36,7 +36,7 @@ public class MapPanel1 extends JPanel {
         if (ds.networkRead == true) { // Only try to plot is data has been properly read from file
 
             // Compute scale factor in order to keep the map in proportion when the window is resized
-            System.out.println("TEST");
+          
             int height = getHeight();
             int width = getWidth();
             double xscale = 1.0 * width / xsize;
@@ -71,7 +71,7 @@ public class MapPanel1 extends JPanel {
                 x2 = (int) (ds.nodeX[ds.arcEnd[i] - 1] * xscale);
                 y2 = (int) (ds.nodeY[ds.arcEnd[i] - 1] * yscale);
                 g.drawLine(x1, height - y1, x2, height - y2);
-                System.out.println("Arc " + i + ": " + ds.arcStart[i] + " " + ds.arcEnd[i]);
+                //System.out.println("Arc " + i + ": " + ds.arcStart[i] + " " + ds.arcEnd[i]);
             }
         }
     } // end paintComponent

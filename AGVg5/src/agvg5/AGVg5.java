@@ -36,39 +36,34 @@ public class AGVg5 {
         br = new BluetoothReceiver();
         ds = new DataStore1();
 
-        http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
+       // http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
        
         
          //Ubuntu-dator
-        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
         //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+       // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+                
         
+
+
         ds.readNet();
 
         gui = new GUI(ds);
 
         gui.setVisible(true);
         
-
+       
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
 
-        //Test för att ändra uppdragslistan.
-        int i = 0;
-        while (i <= 40) {
-            gui.setUppdrag("" + Cn + i);
-            i++;
-        }
-
-
-        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
-        //ds.readNet();
-
-
+     
+        
+        
+      
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         Thread t1 = new Thread(bt);
@@ -80,6 +75,7 @@ public class AGVg5 {
         //t1.start();
         //t2.start();
         //t4.start();
+     
     }
 
     public static void main(String[] args) {

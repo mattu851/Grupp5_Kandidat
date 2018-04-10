@@ -14,19 +14,16 @@ import java.net.URL;
  *
  * @author itn
  */
-public class HTTP_test implements Runnable {
+public class HTTP_test {
 
     private String url;
+    private String meddelande;
 
-    public HTTP_test(String URL) {
+    public String HTTP_test(String URL) {
         url = URL;
 
-    }
-
-    public void run() {
         try {
-            
-            
+
             URL urlobjekt = new URL(url);
             HttpURLConnection anslutning = (HttpURLConnection) urlobjekt.openConnection();
             System.out.println("\nAnropar: " + url);
@@ -41,10 +38,13 @@ public class HTTP_test implements Runnable {
             }
             inkommande.close();
             System.out.println(inkommande_samlat.toString());
+            meddelande = inkommande_samlat.toString();
+
         } catch (Exception e) {
             System.out.print(e.toString());
         }
 
-    }
+        return meddelande;
 
+    }
 }

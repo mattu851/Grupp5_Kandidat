@@ -35,8 +35,9 @@ public final class GUI extends javax.swing.JFrame {
         jTextField4.setText("" + b);
     }
 
-    void setUppdrag(String c) {
-        uppdragslista = uppdragslista + c + "\n";
+    public void setUppdrag(String c) {
+        
+        uppdragslista = uppdragslista + "hej" + "\n";
         jTextArea1.setText(uppdragslista);
         //jScrollPane1.
     }
@@ -493,12 +494,15 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_uppdragAGV3ActionPerformed
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
-        if (startButton.isSelected()) {
-            resetButton.setEnabled(true);
-            // AKTIVERING AV FORDON
-        } else {
-
-        }
+        OptPlan op = new OptPlan(ds);
+        op.createPlan();
+        GuiUpdate g1 = new GuiUpdate(ds,this, op);
+        Thread t5 = new Thread(g1);
+        t5.start();
+        
+       
+        
+        
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
@@ -507,6 +511,8 @@ public final class GUI extends javax.swing.JFrame {
             startButton.setBackground(Color.RED);
             startButton.setEnabled(false);
             resetButton.setSelected(false);
+            AGVg5 x = new AGVg5();
+
         } else {
 
         }
