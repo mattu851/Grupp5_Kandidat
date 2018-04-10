@@ -19,9 +19,13 @@ public class HTTP_test {
     private String url;
     private String meddelande;
 
-    public String HTTP_test(String URL) {
+    public HTTP_test(String URL) {
         url = URL;
 
+    
+    }
+    public String HTTP(String url){
+    
         try {
 
             URL urlobjekt = new URL(url);
@@ -43,8 +47,13 @@ public class HTTP_test {
         } catch (Exception e) {
             System.out.print(e.toString());
         }
+        return url;
+    }
+   
 
+    
+    
+    public String getMessage(){
         return meddelande;
-
     }
 }

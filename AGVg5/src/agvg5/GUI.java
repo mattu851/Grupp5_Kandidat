@@ -500,6 +500,10 @@ public final class GUI extends javax.swing.JFrame {
         Thread t5 = new Thread(g1);
         t5.start();
         
+        BluetoothTransceiver_newtest1 bt = new BluetoothTransceiver_newtest1();
+        
+       Thread t6 = new Thread(bt);
+       t6.start();
        
         
         
@@ -511,6 +515,7 @@ public final class GUI extends javax.swing.JFrame {
             startButton.setBackground(Color.RED);
             startButton.setEnabled(false);
             resetButton.setSelected(false);
+            
             AGVg5 x = new AGVg5();
 
         } else {

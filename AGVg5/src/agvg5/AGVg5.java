@@ -21,7 +21,7 @@ public class AGVg5 {
 
         String Bn;
         String Cn;
-
+        String testar;
         //Lab3 dator
         //Bn = "001A7DDA7106";
         //Cn = "1";
@@ -32,11 +32,11 @@ public class AGVg5 {
         // Grupp 4
         //Bn ="001060D1C8E1";	
         //Cn =1;
-        bt = new BluetoothTransmitter(Bn, Cn);
-        br = new BluetoothReceiver();
+       // bt = new BluetoothTransmitter(Bn, Cn);
+      //  br = new BluetoothReceiver();
         ds = new DataStore1();
 
-       // http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
+       
        
         
          //Ubuntu-dator
@@ -59,15 +59,15 @@ public class AGVg5 {
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
-
+       
      
         
         
       
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
-        Thread t1 = new Thread(bt);
-        Thread t2 = new Thread(br);
+        //Thread t1 = new Thread(bt);
+        //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
 
         //Thread t4 = new Thread(http);
