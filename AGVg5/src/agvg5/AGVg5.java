@@ -35,10 +35,7 @@ public class AGVg5 {
        // bt = new BluetoothTransmitter(Bn, Cn);
       //  br = new BluetoothReceiver();
         ds = new DataStore1();
-
-       
-       
-        
+      
          //Ubuntu-dator
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
@@ -46,7 +43,8 @@ public class AGVg5 {
         // Calles dator
        // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
                 
-        
+    
+        http = new HTTP_test("http://tnk111.n7.se/listauppdrag.php?plats=A");
 
 
         ds.readNet();
@@ -70,11 +68,11 @@ public class AGVg5 {
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
 
-        //Thread t4 = new Thread(http);
+        Thread t4 = new Thread(http);
 
         //t1.start();
         //t2.start();
-        //t4.start();
+        t4.start();
      
     }
 

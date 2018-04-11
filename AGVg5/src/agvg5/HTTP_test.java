@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package agvg5;
 
 import java.io.BufferedReader;
@@ -14,20 +9,18 @@ import java.net.URL;
  *
  * @author itn
  */
-public class HTTP_test {
+public class HTTP_test implements Runnable {
 
     private String url;
-    private String meddelande;
 
     public HTTP_test(String URL) {
         url = URL;
 
-    
     }
-    public String HTTP(String url){
-    
-        try {
 
+    public void run() {
+        try {
+            
             URL urlobjekt = new URL(url);
             HttpURLConnection anslutning = (HttpURLConnection) urlobjekt.openConnection();
             System.out.println("\nAnropar: " + url);
@@ -42,18 +35,11 @@ public class HTTP_test {
             }
             inkommande.close();
             System.out.println(inkommande_samlat.toString());
-            meddelande = inkommande_samlat.toString();
-
         } catch (Exception e) {
             System.out.print(e.toString());
         }
-        return url;
-    }
-   
 
-    
-    
-    public String getMessage(){
-        return meddelande;
     }
+
 }
+
