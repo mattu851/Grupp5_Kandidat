@@ -34,7 +34,7 @@ public void run (){
                     = new BufferedReader(
                             new InputStreamReader(System.in));
             
-            String meddelande_in ="hejhej";
+            String meddelande_in ="";
      
             while (true) {
               

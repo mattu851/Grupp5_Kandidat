@@ -9,6 +9,8 @@ import java.net.URL;
  *
  * @author itn
  */
+
+
 public class HTTP_test implements Runnable {
 
     private String url;

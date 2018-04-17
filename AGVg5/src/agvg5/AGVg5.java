@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// 0=stanna 1=höger 2=vänster 
 package agvg5;
 
 public class AGVg5 {
