@@ -21,7 +21,7 @@ public class AGVg5 {
 
         String Bn;
         String Cn;
-
+        String testar;
         //Lab3 dator
         //Bn = "001A7DDA7106";
         //Cn = "1";
@@ -32,52 +32,48 @@ public class AGVg5 {
         // Grupp 4
         //Bn ="001060D1C8E1";	
         //Cn =1;
-        bt = new BluetoothTransmitter(Bn, Cn);
-        br = new BluetoothReceiver();
+       // bt = new BluetoothTransmitter(Bn, Cn);
+      //  br = new BluetoothReceiver();
         ds = new DataStore1();
-
-        http = new HTTP_test("http://tnk111.n7.se/getmessage.php?messagetype=33");
-       
-        
+      
          //Ubuntu-dator
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
         //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
-        
+       // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+                
+    
+        http = new HTTP_test("http://tnk111.n7.se/listauppdrag.php?plats=A");
+
+
         ds.readNet();
 
         gui = new GUI(ds);
 
         gui.setVisible(true);
+        
+       
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
-
-        //Test för att ändra uppdragslistan.
-        int i = 0;
-        while (i <= 40) {
-            gui.setUppdrag("" + Cn + i);
-            i++;
-        }
-
-
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
-        ds.readNet();
-
-
+       
+     
+        
+        
+      
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
-        Thread t1 = new Thread(bt);
-        Thread t2 = new Thread(br);
+        //Thread t1 = new Thread(bt);
+        //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
 
-        //Thread t4 = new Thread(http);
+        Thread t4 = new Thread(http);
 
-        t1.start();
-        t2.start();
-        //t4.start();
+        //t1.start();
+        //t2.start();
+        t4.start();
+     
     }
 
     public static void main(String[] args) {

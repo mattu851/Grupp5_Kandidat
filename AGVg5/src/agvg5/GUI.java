@@ -11,16 +11,17 @@ import java.awt.*;
  *
  * @author jokk_
  */
-public class GUI extends javax.swing.JFrame {
+public final class GUI extends javax.swing.JFrame {
 
     DataStore1 ds;
 
     /**
      * Creates new form GUI
+     * @param ds
      */
     public GUI(DataStore1 ds) {
         this.ds = ds;
-        MyinitComponents();
+        myinitComponents();
 
     }
 
@@ -34,39 +35,18 @@ public class GUI extends javax.swing.JFrame {
         jTextField4.setText("" + b);
     }
 
-    void setUppdrag(String c) {
-        uppdragslista = uppdragslista + c + "\n";
+    public void setUppdrag(String c) {
+        
+        uppdragslista = uppdragslista + "hej" + "\n";
         jTextArea1.setText(uppdragslista);
         //jScrollPane1.
     }
 
-    public void MyinitComponents() {
+    public void myinitComponents() {
       
         jPanel1 = new MapPanel1(ds);
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 350));
         
-   
-
-        /*
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 350));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-       */
-        
-         PanelButtons = new javax.swing.JPanel();
+        PanelButtons = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
@@ -85,7 +65,7 @@ public class GUI extends javax.swing.JFrame {
         uppdragAGV3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        //jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,6 +93,7 @@ public class GUI extends javax.swing.JFrame {
 
         resetButton.setText("Reset");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
+            
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
             }
@@ -142,7 +123,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -240,7 +221,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setName(""); // NOI18N
-       jPanel1.setPreferredSize(new java.awt.Dimension(700, 350));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 350));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -270,14 +251,13 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(PanelButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PanelUppdrag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         
-
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -514,12 +494,19 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_uppdragAGV3ActionPerformed
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
-        if (startButton.isSelected()) {
-            resetButton.setEnabled(true);
-            // AKTIVERING AV FORDON
-        } else {
-
-        }
+        OptPlan op = new OptPlan(ds);
+        op.createPlan();
+        GuiUpdate g1 = new GuiUpdate(ds,this, op);
+        Thread t5 = new Thread(g1);
+        t5.start();
+        
+        BluetoothTransceiver_newtest1 bt = new BluetoothTransceiver_newtest1();
+        
+       Thread t6 = new Thread(bt);
+       t6.start();
+       
+        
+        
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
@@ -528,6 +515,9 @@ public class GUI extends javax.swing.JFrame {
             startButton.setBackground(Color.RED);
             startButton.setEnabled(false);
             resetButton.setSelected(false);
+            
+            AGVg5 x = new AGVg5();
+
         } else {
 
         }
@@ -565,5 +555,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField uppdragAGV2;
     private javax.swing.JTextField uppdragAGV3;
     // End of variables declaration//GEN-END:variables
-private MapPanel1 map;
+
+    private MapPanel1 map;
 }

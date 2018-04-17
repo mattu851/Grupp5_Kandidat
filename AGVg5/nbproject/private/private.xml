@@ -3,7 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/AGVg5/src/agvg5/HTTP_test.java</file>
+=======
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/OptPlan.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/AGVg5.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/HTTP_test.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/MapPanel1.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/Edge.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/GuiUpdate.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/Graph.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/DataStore1.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/BluetoothReceiver.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/GUI.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/Vertex.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/BluetoothTransmitter.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/BluetoothTransceiver_newtest1.java</file>
+            <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/AGVg5/src/agvg5/DijkstraAlgorithm.java</file>
+>>>>>>> 5b621d55b3f8d8cd09013e577a35430f8f974596
         </group>
     </open-files>
 </project-private>
