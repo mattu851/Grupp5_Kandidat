@@ -43,13 +43,13 @@ public class GuiUpdate implements Runnable {
             int[] list = op.getIndex();
 
             while (i <= list.length - 1) {
-
                 Thread.sleep(sleepTime);
 
                 //cui.appendStatus("Jag är tråd GuiUpdate! För " + i + ":te gången.");
                 ds.robotX = (int) (ds.nodeX[list[i] - 1]);
                 ds.robotY = (int) (ds.nodeY[list[i] - 1]);
-
+                
+                //System.out.println(list[i]);
                 i++;
                 
               

@@ -17,7 +17,7 @@ public class OptPlan {
     private List<Edge> edges;
     private DataStore1 ds;
     private int[] indexList = new int[1000];
-    private int start = 0;
+    private int start = 55;
     private int dest = 68;
     
 
@@ -57,7 +57,7 @@ public class OptPlan {
                 if (ds.arcStart[j] == Integer.parseInt(path.get(i).getId())
                         && ds.arcEnd[j]
                         == Integer.parseInt(path.get(i + 1).getId())) {
-                  //  System.out.println("Arc: " + j);
+                    System.out.println("Arc: " + j);
                     ds.arcColor[j]=1;
                 }     
             }
@@ -66,6 +66,12 @@ public class OptPlan {
     }
     public int[] getIndex(){
         return indexList;
+    }
+    
+    public String[] getDirections(){
+        
+        
+        return null;
     }
 
 }
