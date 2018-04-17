@@ -45,7 +45,7 @@ public class AGVg5 {
         // Calles dator
         ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
-        http = new HTTP_test("http://tnk111.n7.se/listauppdrag.php?plats=A");
+        http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
 
         ds.readNet();
 

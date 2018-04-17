@@ -16,7 +16,7 @@ import javax.bluetooth.*;
 
 public class BluetoothTransceiver_newtest1 implements Runnable {
 
-    private String meddelande_in = "BAJS";
+    private String meddelande_in = "TEST från Transceivern";
 
     public BluetoothTransceiver_newtest1() {
 
