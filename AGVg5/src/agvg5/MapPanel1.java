@@ -72,8 +72,8 @@ public class MapPanel1 extends JPanel {
                 y2 = (int) (ds.nodeY[ds.arcEnd[i] - 1] * yscale);
                 g.drawLine(x1, height - y1, x2, height - y2);
                 //System.out.println("Arc " + i + ": " + ds.arcStart[i] + " " + ds.arcEnd[i]);
-                if(x1<x2){
-                    System.out.println(ds.directions[1]);
+                if(x1<x2 && y1==y2){
+                    //System.out.println(ds.directions[1]);
                 }
             }
         }

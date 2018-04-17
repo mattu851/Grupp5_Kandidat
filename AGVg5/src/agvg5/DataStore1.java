@@ -22,7 +22,7 @@ public class DataStore1 {
     double robotX;
     double robotY;
     int[] arcColor;
-    String[] directions;
+    //String[] directions;
 
     public DataStore1() {
         // Initialize the datastore with fixed size arrays for storing the network data
@@ -36,7 +36,6 @@ public class DataStore1 {
         arcColor = new int[1000];
         networkRead = false;
         updateUIflag = false;
-        directions =  new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
 
     }
 

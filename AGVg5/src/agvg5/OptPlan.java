@@ -19,6 +19,8 @@ public class OptPlan {
     private int[] indexList = new int[1000];
     private int start = 10;
     private int dest = 68;
+    private String[] directions =  new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
+
     
 
     public OptPlan(DataStore1 ds) {

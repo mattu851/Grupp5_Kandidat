@@ -50,6 +50,7 @@ public class BluetoothTransceiver implements Runnable {
                     break;
                 }
 
+                
                 bluetooth_ut.println(meddelande_ut);
                 meddelande_in = bluetooth_in.readLine();
                 System.out.println("Mottaget: " + meddelande_in);

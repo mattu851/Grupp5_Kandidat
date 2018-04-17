@@ -497,7 +497,7 @@ public final class GUI extends javax.swing.JFrame {
         OptPlan op = new OptPlan(ds);
         op.createPlan();
         GuiUpdate g1 = new GuiUpdate(ds,this, op);
-        Kordirektiv kd = new Kordirektiv(20, op);
+        Kordirektiv kd = new Kordirektiv(20, op, ds);
         
         Thread t5 = new Thread(g1);
         
