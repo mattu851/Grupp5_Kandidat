@@ -14,11 +14,11 @@ import javax.microedition.io.*;
 import javax.bluetooth.*;
 // HELLO GITHUB 
 
-public class BluetoothTransceiver_newtest1 implements Runnable {
+public class BluetoothTransceiver implements Runnable {
 
     private String meddelande_in = "TEST från Transceivern";
 
-    public BluetoothTransceiver_newtest1() {
+    public BluetoothTransceiver() {
 
     }
 

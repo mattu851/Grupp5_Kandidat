@@ -18,7 +18,7 @@ public class AGVg5 {
 
     Kordirektiv kd;
 
-    BluetoothTransceiver_newtest1 blue;
+    BluetoothTransceiver blue;
 
 
     /**
@@ -45,7 +45,7 @@ public class AGVg5 {
 
      
 
-        blue = new BluetoothTransceiver_newtest1();
+        blue = new BluetoothTransceiver();
 
         //Ubuntu-dator
 

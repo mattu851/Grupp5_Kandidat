@@ -503,7 +503,7 @@ public final class GUI extends javax.swing.JFrame {
         
         t5.start();
         
-        BluetoothTransceiver_newtest1 bt = new BluetoothTransceiver_newtest1();
+        BluetoothTransceiver bt = new BluetoothTransceiver();
         
        Thread t6 = new Thread(bt);
        t6.start();
