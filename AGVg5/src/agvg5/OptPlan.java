@@ -17,7 +17,7 @@ public class OptPlan {
     private List<Edge> edges;
     private DataStore1 ds;
     private int[] indexList = new int[1000];
-    private int start = 55;
+    private int start = 10;
     private int dest = 68;
     
 

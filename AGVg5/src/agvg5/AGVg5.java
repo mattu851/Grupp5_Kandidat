@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// 0=stanna 1=höger 2=vänster 
 package agvg5;
 
 public class AGVg5 {
@@ -13,7 +15,9 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
-    BluetoothTransceiver_newtest1 blue;
+    Kordirektiv kd;
+    BluetoothTransceiver blue;
+
 
     /**
      * @param args the command line arguments
@@ -36,14 +40,22 @@ public class AGVg5 {
         // bt = new BluetoothTransmitter(Bn, Cn);
         //  br = new BluetoothReceiver();
         ds = new DataStore1();
-        blue = new BluetoothTransceiver_newtest1();
+
+     
+
+       // blue = new BluetoothTransceiver();
 
         //Ubuntu-dator
+
+        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+
         // Gustavs dator
-        //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        // ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+
 
         http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
 
@@ -55,7 +67,7 @@ public class AGVg5 {
 
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
-        System.out.println(blue.get_QR());
+        //System.out.println(blue.get_QR());
         //blue.get_QR();
 
         //cui=new ControlUI2(bt);
@@ -64,12 +76,11 @@ public class AGVg5 {
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
         Thread t4 = new Thread(http);
+        
 
         //t1.start();
         //t2.start();
         t4.start();
-
-                
 
     }
 
