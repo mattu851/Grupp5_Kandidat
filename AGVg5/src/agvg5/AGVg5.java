@@ -15,6 +15,7 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
+    BluetoothTransceiver_newtest1 blue;
 
     /**
      * @param args the command line arguments
@@ -34,48 +35,44 @@ public class AGVg5 {
         // Grupp 4
         //Bn ="001060D1C8E1";	
         //Cn =1;
-       // bt = new BluetoothTransmitter(Bn, Cn);
-      //  br = new BluetoothReceiver();
+        // bt = new BluetoothTransmitter(Bn, Cn);
+        //  br = new BluetoothReceiver();
         ds = new DataStore1();
-      
-         //Ubuntu-dator
+        blue = new BluetoothTransceiver_newtest1();
+
+        //Ubuntu-dator
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
         //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-       // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
-                
-    
-        http = new HTTP_test("http://tnk111.n7.se/listauppdrag.php?plats=A");
+        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
+        http = new HTTP_test("http://tnk111.n7.se/listaplatser");
 
         ds.readNet();
 
         gui = new GUI(ds);
 
         gui.setVisible(true);
-        
-       
+
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
+        System.out.println(blue.get_QR());
+        //blue.get_QR();
 
-       
-     
-        
-        
-      
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         //Thread t1 = new Thread(bt);
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
-
         Thread t4 = new Thread(http);
 
         //t1.start();
         //t2.start();
         t4.start();
-     
+
+                
+
     }
 
     public static void main(String[] args) {
