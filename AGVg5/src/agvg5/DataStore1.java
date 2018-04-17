@@ -90,6 +90,7 @@ public class DataStore1 {
                 arcEnd[i] = Integer.parseInt(sline[1].trim());
                 arcCost[i] = Integer.parseInt(sline[2].trim());
             }
+            System.out.println("arc 2: "+ arcStart[1] + " end " + arcEnd[1]);
 
             networkRead = true;  // Indicate that all network data is in place in the DataStore
             robotX = nodeX[0];

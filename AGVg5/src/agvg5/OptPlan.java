@@ -18,7 +18,7 @@ public class OptPlan {
     private DataStore1 ds;
     private int[] indexList = new int[1000];
     private int start = 0;
-    private int dest = 67;
+    private int dest = 68;
     
 
     public OptPlan(DataStore1 ds) {
@@ -44,8 +44,8 @@ public class OptPlan {
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
 
         // Compute shortest path
-        dijkstra.execute(nodes.get(dest));
-        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(start));
+        dijkstra.execute(nodes.get(start));
+        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(dest));
         // Get shortest path
         for (int i = 0; i < path.size(); i++) {
             //System.out.println(path.get(i));

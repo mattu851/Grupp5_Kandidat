@@ -13,7 +13,11 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
+<<<<<<< HEAD
     Kordirektiv kd;
+=======
+    BluetoothTransceiver_newtest1 blue;
+>>>>>>> fbe8e4833042d8fdb2a2d93b7457d50a980c3ab8
 
     /**
      * @param args the command line arguments
@@ -33,45 +37,55 @@ public class AGVg5 {
         // Grupp 4
         //Bn ="001060D1C8E1";	
         //Cn =1;
-       // bt = new BluetoothTransmitter(Bn, Cn);
-      //  br = new BluetoothReceiver();
+        // bt = new BluetoothTransmitter(Bn, Cn);
+        //  br = new BluetoothReceiver();
         ds = new DataStore1();
+<<<<<<< HEAD
       
          //Ubuntu-dator
+=======
+        blue = new BluetoothTransceiver_newtest1();
+
+        //Ubuntu-dator
+>>>>>>> fbe8e4833042d8fdb2a2d93b7457d50a980c3ab8
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
         ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-       // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
-                
-    
-        http = new HTTP_test("http://tnk111.n7.se/listauppdrag.php?plats=A");
+        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
+        http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
 
         ds.readNet();
 
         gui = new GUI(ds);
 
         gui.setVisible(true);
-        
-       
+
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
+        System.out.println(blue.get_QR());
+        //blue.get_QR();
 
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         //Thread t1 = new Thread(bt);
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
-
         Thread t4 = new Thread(http);
         
 
         //t1.start();
         //t2.start();
         t4.start();
+<<<<<<< HEAD
        
      
+=======
+
+                
+
+>>>>>>> fbe8e4833042d8fdb2a2d93b7457d50a980c3ab8
     }
 
     public static void main(String[] args) {
