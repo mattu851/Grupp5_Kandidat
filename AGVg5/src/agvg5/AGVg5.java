@@ -15,9 +15,7 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
-
     Kordirektiv kd;
-
     BluetoothTransceiver blue;
 
 
@@ -45,7 +43,7 @@ public class AGVg5 {
 
      
 
-        blue = new BluetoothTransceiver();
+       // blue = new BluetoothTransceiver();
 
         //Ubuntu-dator
 
@@ -61,7 +59,7 @@ public class AGVg5 {
 
         http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
 
-        
+        ds.readNet();
 
         gui = new GUI(ds);
 
@@ -69,7 +67,7 @@ public class AGVg5 {
 
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
-        System.out.println(blue.get_QR());
+        //System.out.println(blue.get_QR());
         //blue.get_QR();
 
         //cui=new ControlUI2(bt);

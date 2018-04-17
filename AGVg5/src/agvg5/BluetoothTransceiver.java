@@ -17,8 +17,9 @@ import javax.bluetooth.*;
 public class BluetoothTransceiver implements Runnable {
 
     private String meddelande_in = "TEST från Transceivern";
-
+    private Kordirektiv kd;
     public BluetoothTransceiver() {
+       
 
     }
 
@@ -35,13 +36,17 @@ public class BluetoothTransceiver implements Runnable {
 
             
             String meddelande_in ="";
-     
+            //int meddelande_ut = 1337;
 
             while (true) {
-
+                
+                // Testar att hämta information från Kordirektiv
+               //meddelande_ut = kd.getDir();
+                //Thread.sleep(2000);
+                
+                // Läsa in från tangentbord
                 String meddelande_ut = tangentbord.readLine();
-                if (meddelande_ut
-                        == null) {
+                if (meddelande_ut == null) {
                     break;
                 }
 
