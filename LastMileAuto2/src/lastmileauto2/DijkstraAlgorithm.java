@@ -131,7 +131,7 @@ public class DijkstraAlgorithm {
         while (predecessors.get(step) != null) {
             step = predecessors.get(step);
             path.add(step);
-           
+            System.out.println(step);           
         }
         System.out.println(path);
         // Put it into the correct order

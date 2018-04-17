@@ -497,7 +497,10 @@ public final class GUI extends javax.swing.JFrame {
         OptPlan op = new OptPlan(ds);
         op.createPlan();
         GuiUpdate g1 = new GuiUpdate(ds,this, op);
+        Kordirektiv kd = new Kordirektiv(20, op);
+        
         Thread t5 = new Thread(g1);
+        
         t5.start();
         
         BluetoothTransceiver_newtest1 bt = new BluetoothTransceiver_newtest1();
@@ -505,7 +508,8 @@ public final class GUI extends javax.swing.JFrame {
        Thread t6 = new Thread(bt);
        t6.start();
        
-        
+       Thread t7 = new Thread(kd);
+       t7.start();
         
     }//GEN-LAST:event_startButtonActionPerformed
 

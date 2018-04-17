@@ -3,6 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/DataStore.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/Vertex.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/GuiUpdate.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/RobotRead.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/ControlUI.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/Graph.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/MapPanel.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/LastMileAuto.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/DijkstraAlgorithm.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/OptPlan.java</file>
+            <file>file:/C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/Edge.java</file>
+=======
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/MapPanel.java</file>
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/GuiUpdate.java</file>
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/Vertex.java</file>
@@ -11,6 +24,7 @@
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/DijkstraAlgorithm.java</file>
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/RobotRead.java</file>
             <file>file:/home/itn/NetBeansProjects/Grupp5_Kandidat/LastMileAuto2/src/lastmileauto2/Graph.java</file>
+>>>>>>> 5b621d55b3f8d8cd09013e577a35430f8f974596
         </group>
     </open-files>
 </project-private>

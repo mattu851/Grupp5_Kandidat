@@ -15,7 +15,11 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
+
+    Kordirektiv kd;
+
     BluetoothTransceiver_newtest1 blue;
+
 
     /**
      * @param args the command line arguments
@@ -38,18 +42,26 @@ public class AGVg5 {
         // bt = new BluetoothTransmitter(Bn, Cn);
         //  br = new BluetoothReceiver();
         ds = new DataStore1();
+
+     
+
         blue = new BluetoothTransceiver_newtest1();
 
         //Ubuntu-dator
+
         ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+
         // Gustavs dator
-        //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        // ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
         //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
-        http = new HTTP_test("http://tnk111.n7.se/listaplatser");
 
-        ds.readNet();
+        http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
+
+        
 
         gui = new GUI(ds);
 
@@ -66,12 +78,11 @@ public class AGVg5 {
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
         Thread t4 = new Thread(http);
+        
 
         //t1.start();
         //t2.start();
         t4.start();
-
-                
 
     }
 
