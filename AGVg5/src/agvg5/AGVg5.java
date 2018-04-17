@@ -13,6 +13,7 @@ public class AGVg5 {
     DataStore1 ds;
     GUI gui;
     HTTP_test http;
+    Kordirektiv kd;
 
     /**
      * @param args the command line arguments
@@ -37,9 +38,9 @@ public class AGVg5 {
         ds = new DataStore1();
       
          //Ubuntu-dator
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
         // Gustavs dator
-        //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+        ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
        // ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
                 
@@ -57,11 +58,6 @@ public class AGVg5 {
         gui.changeChannel(Cn);
         gui.changeAdress(Bn);
 
-       
-     
-        
-        
-      
         //cui=new ControlUI2(bt);
         // cui.setVisible(true);
         //Thread t1 = new Thread(bt);
@@ -69,10 +65,12 @@ public class AGVg5 {
         //Thread t3 = new Thread(gui);
 
         Thread t4 = new Thread(http);
+        
 
         //t1.start();
         //t2.start();
         t4.start();
+       
      
     }
 
