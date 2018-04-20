@@ -47,12 +47,12 @@ public class AGVg5 {
 
         //Ubuntu-dator
 
-        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
 
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
 
         // Gustavs dator
-        // ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+         ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/real_streets.txt");
         // Calles dator
         //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
