@@ -22,7 +22,6 @@ public class HTTP_test implements Runnable {
 
     public void run() {
         try {
-            
             URL urlobjekt = new URL(url);
             HttpURLConnection anslutning = (HttpURLConnection) urlobjekt.openConnection();
             System.out.println("\nAnropar: " + url);
@@ -37,6 +36,9 @@ public class HTTP_test implements Runnable {
             }
             inkommande.close();
             System.out.println(inkommande_samlat.toString());
+            
+            //Thread.sleep(1000);
+            
         } catch (Exception e) {
             System.out.print(e.toString());
         }
