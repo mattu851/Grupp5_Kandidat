@@ -502,7 +502,7 @@ public final class GUI extends javax.swing.JFrame {
         Kordirektiv kd = new Kordirektiv(20, op, ds);
         String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
         String getMess = "http://tnk111.n7.se/getmessage.php?messagetype=4";
-        HTTP_test ht = new HTTP_test(getMess);
+        HTTP_test ht = new HTTP_test(plats);
 
         //Thread t5 = new Thread(g1);
 
