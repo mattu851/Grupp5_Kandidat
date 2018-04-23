@@ -54,18 +54,18 @@ public class AGVg5 {
         // Gustavs dator
          ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/real_streets.txt");
         // Calles dator
-        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
 
         //http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
         
-        String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
+        //String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
        /*  
         String plats = "http://tnk111.n7.se/listauppdrag.php?plats=";
         http = new HTTP_test(plats + get.ABC);
         Där get.ABC är en metod från den klass som tar beslutet vart AGVn ska åka
        */
-        http = new HTTP_test(plats);
+        //http = new HTTP_test(plats);
 
         ds.readNet();
 
@@ -83,12 +83,12 @@ public class AGVg5 {
         //Thread t1 = new Thread(bt);
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
-        Thread t4 = new Thread(http);
+        //Thread t4 = new Thread(http);
         
 
         //t1.start();
         //t2.start();
-        t4.start();
+        //t4.start();
 
     }
 

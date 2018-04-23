@@ -9,8 +9,6 @@ import java.net.URL;
  *
  * @author itn
  */
-
-
 public class HTTP_test implements Runnable {
 
     private String url;
@@ -22,6 +20,7 @@ public class HTTP_test implements Runnable {
 
     public void run() {
         try {
+               while (true) {
             URL urlobjekt = new URL(url);
             HttpURLConnection anslutning = (HttpURLConnection) urlobjekt.openConnection();
             System.out.println("\nAnropar: " + url);
@@ -29,16 +28,25 @@ public class HTTP_test implements Runnable {
             System.out.println("Statuskod: " + mottagen_status);
 
             BufferedReader inkommande = new BufferedReader(new InputStreamReader(anslutning.getInputStream()));
-            String inkommande_text;
+            String inkommande_text = "";
             StringBuffer inkommande_samlat = new StringBuffer();
-            while ((inkommande_text = inkommande.readLine()) != null) {
-                inkommande_samlat.append(inkommande_text);
+           
+         
+
+                while ((inkommande_text = inkommande.readLine()) != null) {
+                    inkommande_samlat.append(inkommande_text);
+                }
+
+                System.out.println(inkommande_samlat.toString());
+                Thread.sleep(2000);
+                inkommande.close();
+                
             }
-            inkommande.close();
-            System.out.println(inkommande_samlat.toString());
-            
+
+           
+            //System.out.println(inkommande_samlat.toString());
+
             //Thread.sleep(1000);
-            
         } catch (Exception e) {
             System.out.print(e.toString());
         }
@@ -46,4 +54,3 @@ public class HTTP_test implements Runnable {
     }
 
 }
-
