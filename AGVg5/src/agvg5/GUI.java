@@ -507,9 +507,19 @@ public final class GUI extends javax.swing.JFrame {
         
        Thread t6 = new Thread(bt);
        t6.start();
-       
+          
        Thread t7 = new Thread(kd);
        t7.start();
+       
+       Thread thHTTP = new Thread(new HTTP_test("HTTP"));
+       boolean activeHTTP = true; 
+       do{
+             thHTTP.start();
+             if(resetButton.isSelected()){
+                 activeHTTP = false;
+             }
+       }while(activeHTTP == true);
+      
         
     }//GEN-LAST:event_startButtonActionPerformed
 

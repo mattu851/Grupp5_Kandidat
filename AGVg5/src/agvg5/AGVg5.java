@@ -57,7 +57,15 @@ public class AGVg5 {
         //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
 
-        http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
+        //http = new HTTP_test("http://tnk111.n7.se/listaplatser.php");
+        
+        String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
+       /*  
+        String plats = "http://tnk111.n7.se/listauppdrag.php?plats=";
+        http = new HTTP_test(plats + get.ABC);
+        Där get.ABC är en metod från den klass som tar beslutet vart AGVn ska åka
+       */
+        http = new HTTP_test(plats);
 
         ds.readNet();
 
