@@ -17,8 +17,8 @@ public class OptPlan {
     private List<Edge> edges;
     private DataStore1 ds;
     private int[] indexList = new int[1000];
-    private int start = 10;
-    private int dest = 68;
+    private int start = 1;
+    private int dest = 69;
     private String[] directions =  new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
 
     

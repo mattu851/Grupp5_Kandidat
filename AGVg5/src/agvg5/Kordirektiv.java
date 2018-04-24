@@ -17,7 +17,7 @@ public class Kordirektiv implements Runnable {
     private int qr;
     private OptPlan op;
     private int dir;
-    private int[] list;
+    private int[] list; //uppdragslista
     private String currDir;
 
     public Kordirektiv(int qr_in, OptPlan op, DataStore1 ds) {
@@ -46,7 +46,7 @@ public class Kordirektiv implements Runnable {
         
         for (int i = 0; i < ds.nodes; i++) {
             //förädninger x-led 
-            if (ds.nodeX[list[i]]<ds.nodeX[list[i+11]]) { //kör åt E
+            if (ds.nodeX[list[i]]<ds.nodeX[list[i+1]]) { //kör åt E
                 if (currDir=="E"){
                     dir =1;
                 }
@@ -58,7 +58,7 @@ public class Kordirektiv implements Runnable {
                 }
                 currDir= "E";     
             }
-            else if(ds.nodeX[list[i]]>ds.nodeX[list[i+11]]) { //kör åt W
+            else if(ds.nodeX[list[i]]>ds.nodeX[list[i+1]]) { //kör åt W
                 if (currDir=="W"){
                     dir =1;
                 }
@@ -70,7 +70,7 @@ public class Kordirektiv implements Runnable {
                 }
                 currDir="W";
             }
-            else if(ds.nodeY[list[i]]<ds.nodeY[list[i+11]]){ //N
+            else if(ds.nodeY[list[i]]<ds.nodeY[list[i+1]]){ //N
                 if (currDir=="N"){
                     dir =1;
                 }
