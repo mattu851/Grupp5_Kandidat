@@ -43,6 +43,7 @@ public class Kordirektiv implements Runnable {
     //Konvertera riktning till nästkommande höger/vänster rakt fram
     public void convertDir() {
         
+            
             //förädninger x-led 
             if (ds.nodeX[list[1]]<ds.nodeX[list[2]]) { //kör åt E
                 if (currDir=="E"){
@@ -93,7 +94,7 @@ public class Kordirektiv implements Runnable {
                 currDir ="S";
             }
            list =(int[])ArrayUtils.removeElement(list, 1);
-           //Måste lägga till commons-lang-2.6.jar i libraries
+           //Måste lägga till commons-lang-2.6.jar i libraries  - aha
 
         }
     
