@@ -5,10 +5,9 @@
  */
 package agvg5;
 
-/**
- *
- * @author Gustav
- */
+
+import org.apache.commons.lang.ArrayUtils;
+
 public class Kordirektiv implements Runnable {
 
     private int sleepTime;
@@ -44,9 +43,8 @@ public class Kordirektiv implements Runnable {
     //Konvertera riktning till nästkommande höger/vänster rakt fram
     public void convertDir() {
         
-        for (int i = 0; i < ds.nodes; i++) {
             //förädninger x-led 
-            if (ds.nodeX[list[i]]<ds.nodeX[list[i+1]]) { //kör åt E
+            if (ds.nodeX[list[1]]<ds.nodeX[list[2]]) { //kör åt E
                 if (currDir=="E"){
                     dir =1;
                 }
@@ -58,7 +56,7 @@ public class Kordirektiv implements Runnable {
                 }
                 currDir= "E";     
             }
-            else if(ds.nodeX[list[i]]>ds.nodeX[list[i+1]]) { //kör åt W
+            else if(ds.nodeX[list[1]]>ds.nodeX[list[2]]) { //kör åt W
                 if (currDir=="W"){
                     dir =1;
                 }
@@ -70,7 +68,7 @@ public class Kordirektiv implements Runnable {
                 }
                 currDir="W";
             }
-            else if(ds.nodeY[list[i]]<ds.nodeY[list[i+1]]){ //N
+            else if(ds.nodeY[list[1]]<ds.nodeY[list[2]]){ //N
                 if (currDir=="N"){
                     dir =1;
                 }
@@ -94,15 +92,14 @@ public class Kordirektiv implements Runnable {
                 }
                 currDir ="S";
             }
-        }
-        
-        
+           list =(int[])ArrayUtils.removeElement(list, 1);
+           //Måste lägga till commons-lang-2.6.jar i libraries
 
-    }
+        }
+    
 
     public int getDir() {
 
-        
         return dir;
     }
 
