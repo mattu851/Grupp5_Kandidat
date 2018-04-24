@@ -497,20 +497,17 @@ public final class GUI extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         OptPlan op = new OptPlan(ds);
-        op.createPlan();
+        int start=0;
+        int dest=67;
+        op.createPlan(start,dest);
         GuiUpdate g1 = new GuiUpdate(ds, this, op);
         Kordirektiv kd = new Kordirektiv(20, op, ds);
         
         String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
         String getMess = "http://tnk111.n7.se/getmessage.php?messagetype=4";
-       
+        Thread t4= new Thread(g1);
+        t4.start();
         
-        HTTP_test ht = new HTTP_test(plats);
-
-        Thread t5 = new Thread(g1);
-
-        t5.start();
-
         BluetoothTransceiver bt = new BluetoothTransceiver();
 
         Thread t6 = new Thread(bt);
@@ -519,9 +516,6 @@ public final class GUI extends javax.swing.JFrame {
         Thread t7 = new Thread(kd);
         t7.start();
 
-        Thread thHTTP = new Thread(ht);
-
-        thHTTP.start();
 
         boolean activeHTTP = true;
 //        do {

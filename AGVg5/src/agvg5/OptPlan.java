@@ -18,16 +18,21 @@ public class OptPlan {
     private DataStore1 ds;
     private int[] indexList = new int[1000];
     private int start = 10;
-    private int dest = 68;
+    private int dest = 30;
     private String[] directions =  new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
-
+    int pathCost=0;
     
 
     public OptPlan(DataStore1 ds) {
         this.ds = ds;
+    
     }
+   
 
-    public void createPlan() {
+    public void createPlan(int START, int DEST) {
+        start=START;
+        dest=DEST;
+        pathCost=0;
         nodes = new ArrayList<Vertex>();
         edges = new ArrayList<Edge>(); 
         // Set up network
@@ -52,7 +57,9 @@ public class OptPlan {
         for (int i = 0; i < path.size(); i++) {
             //System.out.println(path.get(i));
             indexList[i] = Integer.parseInt(path.get(i).getId()); 
+            
         }
+        
         // Arcs in the shortest path
         for (int i = 0; i < path.size() - 1; i++) {
             for (int j = 0; j < ds.arcs; j++) {
@@ -61,14 +68,21 @@ public class OptPlan {
                         == Integer.parseInt(path.get(i + 1).getId())) {
                     System.out.println("Arc: " + j);
                     ds.arcColor[j]=1;
+                    pathCost=pathCost+ds.arcCost[j];
                 }     
             }
         }
-
+       
     }
     public int[] getIndex(){
         return indexList;
     }
+    
+    public int getCost(){
+        return pathCost;
+    }
+    
+    
     
     public String[] getDirections(){
         

@@ -54,9 +54,13 @@ public class AGVg5 {
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
 
         // Gustavs dator
-        // ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
+      //   ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/real_streets.txt");
         // Calles dator
+
         //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+
+
+
 
 
 
@@ -87,7 +91,7 @@ public class AGVg5 {
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
         //Thread t4 = new Thread(http);
-        korabil = new platsattaka();
+        korabil = new platsattaka(ds);
         
         korabil.aka();
         
