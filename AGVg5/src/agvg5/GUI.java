@@ -498,15 +498,18 @@ public final class GUI extends javax.swing.JFrame {
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         OptPlan op = new OptPlan(ds);
         op.createPlan();
-        //GuiUpdate g1 = new GuiUpdate(ds, this, op);
+        GuiUpdate g1 = new GuiUpdate(ds, this, op);
         Kordirektiv kd = new Kordirektiv(20, op, ds);
+        
         String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
         String getMess = "http://tnk111.n7.se/getmessage.php?messagetype=4";
+       
+        
         HTTP_test ht = new HTTP_test(plats);
 
-        //Thread t5 = new Thread(g1);
+        Thread t5 = new Thread(g1);
 
-        //t5.start();
+        t5.start();
 
         BluetoothTransceiver bt = new BluetoothTransceiver();
 

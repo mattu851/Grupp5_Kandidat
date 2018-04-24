@@ -17,6 +17,8 @@ public class AGVg5 {
     HTTP_test http;
     Kordirektiv kd;
     BluetoothTransceiver blue;
+    Http_1 httptest;
+    platsattaka korabil;
 
 
     /**
@@ -47,14 +49,14 @@ public class AGVg5 {
 
         //Ubuntu-dator
 
-        //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
+        ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets_new.txt");
 
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
 
         // Gustavs dator
         // ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/streets.txt");
         // Calles dator
-        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
+        //ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/streets.txt");
 
 
 
@@ -85,11 +87,23 @@ public class AGVg5 {
         //Thread t2 = new Thread(br);
         //Thread t3 = new Thread(gui);
         //Thread t4 = new Thread(http);
+        korabil = new platsattaka();
         
-
+        korabil.aka();
+        
+      // Test så att Http_1 fukar
+      /*
+      String plats = "http://tnk111.n7.se/listauppdrag.php?plats=A";
+      httptest = new Http_1();
+      httptest.Http_1(plats);
+      */
         //t1.start();
         //t2.start();
         //t4.start();
+        
+        
+        
+        
 
     }
 
