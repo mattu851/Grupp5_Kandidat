@@ -54,6 +54,7 @@ public class AGVg5 {
         //ds.setFileName("/home/itn/NetBeansProjects/Grupp5_Kandidat/streets.txt");
 
         // Gustavs dator
+<<<<<<< HEAD
       //   ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/real_streets.txt");
         // Calles dator
 
@@ -61,6 +62,11 @@ public class AGVg5 {
 
 
 
+=======
+         //ds.setFileName("C:/Users/Gustav/Documents/GitHub/Grupp5_Kandidat/real_streets.txt");
+        // Calles dator
+        ds.setFileName("/Users/Carllindgren/Documents/Kandidat/Grupp5_Kandidat/real_streets.txt");
+>>>>>>> 6b518837700aa67fc3e54f0a4c336630a8b45409
 
 
 

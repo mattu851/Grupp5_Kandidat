@@ -24,19 +24,17 @@ public class MapPanel1 extends JPanel {
         final Color BLUE_COLOR = new Color(0, 0, 255);
         int x, y;
         int xR, yR;
-        int x1, y1;
-        int x2, y2;
+        int x1, y1, x12, y12;
+        int x2, y2, x22, y22;
+        int dist;
 
         final int circlesize = 10;
         final int ysize = 350;
         final int xsize = 700;
 
-        
-
         if (ds.networkRead == true) { // Only try to plot is data has been properly read from file
 
             // Compute scale factor in order to keep the map in proportion when the window is resized
-          
             int height = getHeight();
             int width = getWidth();
             double xscale = 1.0 * width / xsize;
@@ -58,7 +56,7 @@ public class MapPanel1 extends JPanel {
 
                 g.fillOval(x - (circlesize / 2), height - y - circlesize / 2, circlesize, circlesize);
             }
-            
+
             // Draw arcs
             for (int i = 0; i < ds.arcs; i++) {
                 g.setColor(BLUE_COLOR);
@@ -71,10 +69,18 @@ public class MapPanel1 extends JPanel {
                 x2 = (int) (ds.nodeX[ds.arcEnd[i] - 1] * xscale);
                 y2 = (int) (ds.nodeY[ds.arcEnd[i] - 1] * yscale);
                 g.drawLine(x1, height - y1, x2, height - y2);
-                //System.out.println("Arc " + i + ": " + ds.arcStart[i] + " " + ds.arcEnd[i]);
-                if(x1<x2 && y1==y2){
-                    //System.out.println(ds.directions[1]);
+
+                x12 = (int) ds.nodeX[ds.arcStart[i] - 1];
+                x22 = (int) ds.nodeX[ds.arcEnd[i] - 1];
+                y12 = (int) ds.nodeY[ds.arcStart[i] - 1];
+                y22 = (int) ds.nodeY[ds.arcEnd[i] - 1];
+                //skriv ut längden på länken
+                dist = (int) Math.round(Math.hypot((x12 - x22), (y12 - y22)));
+                if (ds.arcColor[i] == 1) {
+                    g.drawString(String.valueOf(dist), (x1 + x2) / 2, ((height - y1) + (height - y2)) / 2);
+
                 }
+
             }
         }
     } // end paintComponent
